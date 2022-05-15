@@ -14,6 +14,16 @@ const routes = [
         name: 'Wallet',
         //component: Wallet
         component: () => import('../components/Wallet.vue')
+    },
+    {
+        path: '/transfers',
+        name: 'Transfers',
+        component: () => import('../components/Transfers.vue')
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: () => import('../components/Profile.vue')
     }
 ]
 
