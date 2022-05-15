@@ -1,7 +1,7 @@
 <template>
     <div id="App">
-        <h1>Jef Fasseur</h1>
-        <p>First component, this will be the homescreen</p>
+        <h1>Wallet page</h1>
+        <p>Second component, this will be the wallet page</p>
     </div>
 </template>
 

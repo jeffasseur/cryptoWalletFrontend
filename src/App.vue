@@ -1,13 +1,11 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
-import Homescreen from './components/Home.vue'
-</script>
-
 <template>
-  <img alt="RUNE logo" src="./assets/thorchaine.png" style="width: 10%;" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/wallet">Wallet</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 
 <style>
@@ -18,5 +16,13 @@ import Homescreen from './components/Home.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#nav {
+  background-color: lightgray;
+  padding: 30px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
 }
 </style>
