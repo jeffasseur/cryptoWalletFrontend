@@ -1,43 +1,39 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">
-        <i class="bx bx-home-alt-2"></i>
-        Home
-      </router-link>
-      <router-link to="/wallet">
-        <i class="bx bx-wallet"></i>
-        Wallet
-      </router-link>
-      <router-link to="/transfers">
-        <i class="bx bx-transfer-alt"></i>
-        Transfers
-      </router-link>
-      <router-link to="/profile">
-        <i class="bx bx-user"></i>
-        Profile
-      </router-link>
-    </div>
-    <router-view />
-  </div>
+  <header id="nav">
+    <router-link to="/">
+      <i class="bx bx-home-alt-2 bx-sm"></i>
+      <span>Home</span>
+    </router-link>
+    <router-link to="/wallet">
+      <i class="bx bx-wallet bx-sm"></i>
+      <span>Wallet</span>
+    </router-link>
+    <router-link to="/transfers">
+      <i class="bx bx-transfer-alt bx-sm"></i>
+      <span>Transfers</span>
+    </router-link>
+    <router-link to="/profile">
+      <i class="bx bx-user bx-sm"></i>
+      <span>Profile</span>
+    </router-link>
+  </header>
+  <router-view />
 </template>
 
-<style>
+<style lang="scss">
+@import './sass/app.scss';
+
+body {
+  margin: 0;
+}
+
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-#nav {
-  background-color: #E4E4E4;
-  padding: 16px;
   display: flex;
-  gap: 16px;
-  justify-content: center;
+  flex-direction: column-reverse;
 }
 
 a {
@@ -48,7 +44,11 @@ a {
 }
 
 a:hover {
+  color: $color-primary;
+}
+
+a>span:hover {
   text-decoration: underline;
-  color: aqua;
+  color: $color-primary;
 }
 </style>
