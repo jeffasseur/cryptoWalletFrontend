@@ -1,10 +1,27 @@
-#nav {
-    background-color: $color-gray-light;
+nav {
+    background-color: transparent;
     padding: .7em 1.5em 1.3em 1.5em;
     display: flex;
     gap: 16px;
-    justify-content: space-between;
-    position: fixed;
+    justify-content: space-around;
+    position: sticky;
     bottom: 0;
     width: 100vw;
 }
+
+a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+  
+a:hover {
+    color: $color-primary;
+}
+
+a>span:hover {
+    text-decoration: underline;
+    color: $color-primary;
+}
+

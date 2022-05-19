@@ -1,52 +1,29 @@
 <template>
-  <header id="nav">
-    <router-link to="/">
-      <i class="bx bx-home-alt-2 bx-sm"></i>
-      <span>Home</span>
-    </router-link>
-    <router-link to="/wallet">
-      <i class="bx bx-wallet bx-sm"></i>
-      <span>Wallet</span>
-    </router-link>
-    <router-link to="/transfers">
-      <i class="bx bx-transfer-alt bx-sm"></i>
-      <span>Transfers</span>
-    </router-link>
-    <router-link to="/profile">
-      <i class="bx bx-user bx-sm"></i>
-      <span>Profile</span>
-    </router-link>
-  </header>
-  <router-view />
+  <Navigation />
 </template>
+
+<script>
+import Navigation from './components/Navigation.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+  },
+}
+</script>
 
 <style lang="scss">
 @import './sass/app.scss';
 
-body {
-  margin: 0;
-}
-
 #app {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: $poppins;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-a {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-}
-
-a:hover {
-  color: $color-primary;
-}
-
-a>span:hover {
-  text-decoration: underline;
-  color: $color-primary;
+  gap: 2.5em;
 }
 </style>
