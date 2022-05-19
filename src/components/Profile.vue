@@ -1,22 +1,39 @@
+<script setup>
+let loggedin = false;
+
+if (loggedin) {
+    document.querySelector('#logout').classList.remove('d-none');
+}
+
+</script>
+
 <template>
-    <div id="App">
-        <h1>Profile page</h1>
-        <p>
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
-                    <path
-                        d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
-                    </path>
-                </svg>
-            </span>
-            Forth component, this will be the profile page
-        </p>
+    <div class="login">
+        <div class="loginForm">
+            <form action="" method="POST">
+                <h2>Log in</h2>
+
+                <label for="inputEmail">Email</label>
+                <input type="text" name="inputEmail" id="inputEmail">
+
+                <label for="inputPassword">Password</label>
+                <input type="text" name="inputPassword" id="inputPassword">
+                <p><small>Forgot Password?</small></p>
+
+                <button type="submit" class="btn btn--primary">Log in</button>
+            </form>
+        </div>
     </div>
 </template>
 
-<style scoped>
-h1 {
-    color: #2c3e50;
+<style lang="scss" scoped>
+@import './../sass/app.scss';
+
+.login {
+    height: 100vh;
+    background: $color-gradient;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

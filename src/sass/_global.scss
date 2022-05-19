@@ -1,5 +1,21 @@
+@import "./colors";
+
 *, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.navigation-bar {
+    height: 4rem;
+    color: $color-text;
+    padding: 1.3em 1.5em .7em 1.5em;
+}
+
+.navigation-bar h1 {
+    font-size: 1.25em;
+}
+
+.d-none {
+    display: none;
 }

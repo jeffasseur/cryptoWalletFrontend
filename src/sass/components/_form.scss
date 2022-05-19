@@ -1,0 +1,29 @@
+@import "../colors";
+
+form {
+    background: $color-white;
+    color: $color-text;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 250px;
+    padding: 1em 2em;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid $color-text;
+    border-radius: 2px;
+}
+
+.loginForm {
+    align-self: center;
+}
+
+@media only screen and (min-width: 800) {
+    form {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

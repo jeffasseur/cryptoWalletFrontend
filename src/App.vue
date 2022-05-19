@@ -32,8 +32,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  display: flex;
-  flex-direction: column-reverse;
 }
 
 a {
