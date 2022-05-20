@@ -51,6 +51,7 @@
 .balance__actions {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1.5em;
 }
 </style>

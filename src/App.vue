@@ -24,6 +24,11 @@ export default {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 2.5em;
+}
+
+nav {
+  order: 10;
 }
 </style>

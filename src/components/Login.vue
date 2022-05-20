@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import config from './../../config/config';
+import config from '../../config/config';
 
 onMounted(() => {
 
@@ -28,9 +28,9 @@ function Login(e) {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.status.success) {
+                if (data.status === "success") {
                     // redirect to homepage
-                    // window.location.href = '/#/';
+                    window.location.href = '/#/'
                     console.log("Data: Success");
                 } else {
                     // show error

@@ -1,7 +1,11 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+
 // importing different components to navigate without reloading the page
-import Home from '../components/Home.vue';
-//import Wallet from '../components/Wallet.vue';
+import Home from '../views/Home.vue';
+import Wallet from '../views/Wallet.vue';
+import Transfers from '../views/Transfers.vue';
+import Profile from '../views/Profile.vue';
+import Login from '../components/Login.vue';
 
 const routes = [
     {
@@ -12,18 +16,22 @@ const routes = [
     {
         path: '/wallet',
         name: 'Wallet',
-        //component: Wallet
-        component: () => import('../components/Wallet.vue')
+        component: Wallet
     },
     {
         path: '/transfers',
         name: 'Transfers',
-        component: () => import('../components/Transfers.vue')
+        component: Transfers
     },
     {
         path: '/profile',
         name: 'Profile',
-        component: () => import('../components/Profile.vue')
+        component: Profile
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
     }
 ]
 
