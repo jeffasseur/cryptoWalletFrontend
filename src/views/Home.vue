@@ -1,14 +1,14 @@
+<script setup>
+
+
+</script>
+
 <template>
-    <div class="search">
-        <input type="search" name="searchbar" id="searchbar">
-        <label for="searchbar" class="btn"><i class="bx bx-search"></i></label>
-    </div>
-    
     <div class="balance">
-        <h3>Current Balance</h3>
+        <h1>Current Balance</h1>
         <div class="balance__amount">
             <i class="bx bx-bug"></i>
-            <p>150.00</p>
+            <h2>150.00</h2>
         </div>
         <div class="balance__actions">
             <a href="#" class="btn btn--primary-outline">
@@ -45,7 +45,11 @@
     flex-direction: row;
     align-items: center;
     gap: .7em;
-    font-size: 1.2em;
+    background: $color-gradient;
+    padding: 4rem 5rem;
+    border-radius: 15px;
+    color: $color-white;
+    font-size: 2em;
 }
 
 .balance__actions {
@@ -53,5 +57,15 @@
     display: flex;
     justify-content: center;
     gap: 1.5em;
+}
+
+.bx-search {
+    font-size: 1.5em;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>

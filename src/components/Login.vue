@@ -2,10 +2,6 @@
 import { onMounted } from 'vue';
 import config from '../../config/config';
 
-onMounted(() => {
-
-});
-
 function Login(e) {
     console.log("clicked");
 
@@ -49,22 +45,24 @@ function Login(e) {
 </script>
 
 <template>
+    <h1>Log in</h1>
     <div class="login">
         <div class="loginForm">
             <form action="" method="POST" name="form-login">
-                <h2>Log in</h2>
 
                 <div class="loginForm__img">
                     <img src="../../public/logo-dark.png" alt="Logo Bugfix">
                 </div>
 
                 <div>
-                    <label for="inputEmail">Email</label>
+                    <label for="inputEmail">Email:</label>
                     <input type="email" name="inputEmail" id="inputEmail" placeholder="Enter email">
+                </div>
 
-                    <label for="inputPassword">Password</label>
+                <div>
+                    <label for="inputPassword">Password:</label>
                     <input type="password" name="inputPassword" id="inputPassword" placeholder="Enter password">
-                    <a><small>Forgot Password?</small></a>
+                    <small><a href="#">Forgot password?</a></small>
                 </div>
 
                 <div class="loginForm__submit">

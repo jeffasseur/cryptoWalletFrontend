@@ -1,8 +1,5 @@
 <template>
-    <div id="App">
-        <h1>Wallet page</h1>
-        <p>Second component, this will be the wallet page</p>
-    </div>
+        <h1>Wallet</h1>
 </template>
 
 <style scoped>
