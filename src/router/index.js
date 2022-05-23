@@ -6,7 +6,8 @@ import Wallet from '../views/Wallet.vue';
 import Transfers from '../views/Transfers.vue';
 import Profile from '../views/Profile.vue';
 import Login from '../components/Login.vue';
-import Register from '../components/Register.vue'
+import Register from '../components/Register.vue';
+import Send from '../components/Send.vue';
  
 const routes = [
     {
@@ -38,6 +39,11 @@ const routes = [
         path: '/register',
         name: 'Register',
         component: Register
+    },
+    {
+        path: '/send',
+        name: 'Send',
+        component: Send
     }
 ]
 

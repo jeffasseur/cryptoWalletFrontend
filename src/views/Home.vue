@@ -11,13 +11,13 @@
             <h2>150.00</h2>
         </div>
         <div class="balance__actions">
-            <a href="#" class="btn btn--primary-outline">
+            <a href="#/send" class="btn btn--primary-outline">
                 <i class="bx bx-arrow-to-top"></i>
                 Send
             </a>
-            <a href="#" class="btn btn--primary-outline">
+            <a href="#/transfers" class="btn btn--primary-outline">
                 <i class="bx bx-arrow-to-bottom"></i>
-                Receive
+                All transfers
                 </a>
         </div>
     </div>
@@ -26,22 +26,27 @@
         <h3>Assets</h3>
         <ul class="assets__list">
             <li>
-                <i class="bx bx-dollar-circle"></i>
+                <i class="bx bx-bug"></i>
+                <span>150</span>
+                <p><strong>BUG</strong></p>
+            </li>
+            <li>
+                <i class="bx bx-bitcoin"></i>
                 <span>0.0001</span>
-                <p>BTC</p>
+                <p><strong>BTC</strong></p>
             </li>
             <li>
-                <i class="bx bx-dollar-circle"></i>
+                <i class="bx bx-coin-stack"></i>
                 <span>0.02</span>
-                <p>ETH</p>
+                <p><strong>ETH</strong></p>
             </li>
             <li>
-                <i class="bx bx-dollar-circle"></i>
+                <i class="bx bx-coin-stack"></i>
                 <span>72.45</span>
-                <p>RUNE</p>
+                <p><strong>RUNE</strong></p>
             </li>
             <li>
-                <i class="bx bx-dollar-circle"></i>
+                <i class="bx bx-coin-stack"></i>
                 <span>242.00</span>
                 <p><strong>XRP</strong></p>
             </li>
@@ -78,19 +83,8 @@
     justify-content: center;
     gap: 1.5em;
 }
-
-.bx-search {
-    font-size: 1.5em;
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .assets__list {
-    background: $color-gradient;
+    background: $color-gray-light;
     margin: 0 1em;
     border-radius: 15px;
 }
@@ -103,7 +97,11 @@
     justify-content: center;
     align-items: center;
     padding: 1.2em 1em;
-    color: $color-white;
+    color: $color-text;
+}
+
+.assets__list>li>i, .balance__amount>i {
+    font-size: 1.5em;
 }
 
 h3 {
