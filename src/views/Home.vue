@@ -4,8 +4,8 @@
 </script>
 
 <template>
+    <h1>Welcome Jef</h1>
     <div class="balance">
-        <h1>Current Balance</h1>
         <div class="balance__amount">
             <i class="bx bx-bug"></i>
             <h2>150.00</h2>
@@ -22,10 +22,30 @@
         </div>
     </div>
 
-    <div class="contacts">
-        <div class="contacts__tiles">
-            Contacts
-        </div>
+    <div class="assets">
+        <h3>Assets</h3>
+        <ul class="assets__list">
+            <li>
+                <i class="bx bx-dollar-circle"></i>
+                <span>0.0001</span>
+                <p>BTC</p>
+            </li>
+            <li>
+                <i class="bx bx-dollar-circle"></i>
+                <span>0.02</span>
+                <p>ETH</p>
+            </li>
+            <li>
+                <i class="bx bx-dollar-circle"></i>
+                <span>72.45</span>
+                <p>RUNE</p>
+            </li>
+            <li>
+                <i class="bx bx-dollar-circle"></i>
+                <span>242.00</span>
+                <p><strong>XRP</strong></p>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -67,5 +87,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.assets__list {
+    background: $color-gradient;
+    margin: 0 1em;
+    border-radius: 15px;
+}
+
+.assets__list>li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2em 1em;
+    color: $color-white;
+}
+
+h3 {
+    margin-bottom: 1em;
 }
 </style>

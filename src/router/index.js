@@ -6,7 +6,8 @@ import Wallet from '../views/Wallet.vue';
 import Transfers from '../views/Transfers.vue';
 import Profile from '../views/Profile.vue';
 import Login from '../components/Login.vue';
-
+import Register from '../components/Register.vue'
+ 
 const routes = [
     {
         path: '/',
@@ -32,6 +33,11 @@ const routes = [
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        component: Register
     }
 ]
 

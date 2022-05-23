@@ -16,7 +16,7 @@
             <h2>Welcome to Bugfix</h2>
             <a class="btn btn--primary" href="/#/login">Log in</a>
             <p>Or if you don't have an account yet</p>
-            <a class="btn btn--primary-outline" href="/#/signup">Sign up</a>
+            <a class="btn btn--primary-outline" href="/#/register">Register</a>
         </div>
     </div>
 </template>

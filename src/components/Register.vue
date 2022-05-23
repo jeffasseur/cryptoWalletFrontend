@@ -2,21 +2,25 @@
 import { onMounted } from 'vue';
 import config from '../../config/config';
 
-function Login(e) {
+function Register(e) {
     console.log("clicked");
 
     // read input from form
+    let firstname = document.querySelector('#inputFirstname').value;
+    let lastname = document.querySelector('#inputLastname').value;
     let email = document.querySelector('#inputEmail').value;
     let password = document.querySelector('#inputPassword').value;
 
-    if (email !== "" && password !== "") {
+    if (email !== "" && password !== "" && firstname !== "" && lastname !== "") {
         // send data to server
-        fetch(config.url + 'users/login', {
+        fetch(config.url + 'users/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                firstname: firstname,
+                lastname: lastname,
                 email: email,
                 password: password
             })
@@ -25,21 +29,15 @@ function Login(e) {
             .then(data => {
                 console.log(data);
                 if (data.status === "success") {
-                    // redirect to homepage
-                    window.location.href = '/#/'
-                    console.log("Success");
-                } else {
-                    // show error
-                    console.log("Error");
+                    // redirect to loginpage
+                    window.location.href = '/#/login'
+                    console.log("Data: Success");
                 }
             })
-            .catch(err => console.log("error"));
+            .catch(err => console.log(err));
     } else {
         // show error
-         return res.json({
-            status: "failed",
-            message: "Fill in your email and password"
-        });
+        console.log("Error");
     }
 
     e.preventDefault();
@@ -48,13 +46,23 @@ function Login(e) {
 </script>
 
 <template>
-    <h1>Log in</h1>
-    <div class="login">
-        <div class="loginForm">
-            <form action="" method="POST" name="form-login">
+    <h1>Register</h1>
+    <div class="Register">
+        <div class="registerForm">
+            <form action="" method="POST" name="form-register">
 
-                <div class="loginForm__img">
+                <div class="registerForm__img">
                     <img src="../../public/logo-dark.png" alt="Logo Bugfix">
+                </div>
+
+                <div>
+                    <label for="inputFirstname">Firstname:</label>
+                    <input type="text" name="inputFirstname" id="inputFirstname" placeholder="Enter firstname">
+                </div>
+
+                <div>
+                    <label for="inputLastname">Lastname:</label>
+                    <input type="text" name="inputLastname" id="inputLastname" placeholder="Enter lastname">
                 </div>
 
                 <div>
@@ -69,8 +77,8 @@ function Login(e) {
                 </div>
 
                 <div class="loginForm__submit">
-                    <button type="submit" @click="Login" class="loginbtn btn btn--primary">Log in</button>
-                    <a href="/#/register">No account? Sign up</a>
+                    <button type="submit" @click="Register" class="loginbtn btn btn--primary">Register</button>
+                    <a href="/#/login">already have an account? Log in</a>
                 </div>
             </form>
         </div>
@@ -80,7 +88,7 @@ function Login(e) {
 <style lang="scss" scoped>
 @import './../sass/app.scss';
 
-.login {
+.register {
     margin-top: 16px;
     display: flex;
     justify-content: center;
