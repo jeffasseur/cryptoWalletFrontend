@@ -29,9 +29,11 @@ function Register(e) {
             .then(data => {
                 console.log(data);
                 if (data.status === "success") {
+                    console.log(data);
+                    let token = data.data.data.token;
+                    localStorage.setItem('token', token);
                     // redirect to loginpage
                     window.location.href = '/#/login'
-                    console.log("Data: Success");
                 }
             })
             .catch(err => console.log(err));
