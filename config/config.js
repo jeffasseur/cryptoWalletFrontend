@@ -1,5 +1,5 @@
 const config = {
-    url: 'http://localhost:3001/api/v1/',
+    url: 'https://webtechadv-bugfix.herokuapp.com/api/v1/',
 }
 
 export default config
