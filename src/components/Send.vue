@@ -66,11 +66,11 @@ export default {
             const response = await fetch(config.url + 'transfers', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + localStorage.getItem('token')
                 },
                 body: JSON.stringify({
                     receiver: data.firstname + ' ' + data.lastname,
-                    sender: "Jef Fasseur",
                     amount: data.amount,
                     description: data.message
                 })

@@ -1,14 +1,40 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+import config from "./../../config/config";
+let user = ref({
+    firstname: '',
+    lastname: '',
+    balance: '',
+});
 
+onMounted( () => {
+     fetch(config.url + "users/getByToken", {
+        headers: {
+            'Authorazation': 'Bearer ' + localStorage.getItem('token')
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.status !== "success") {
+                window.location.href = "/#/login";
+            } else {
+                user.value = data.data.user;
+                console.log(user);
+                return user;
+            }
+        })
+        .catch(err => console.log(err));
+})
 
 </script>
 
 <template>
-    <h1>Welcome Jef</h1>
+    <h1 id="title">Welcome {{user.firstname}}</h1>
     <div class="balance">
         <div class="balance__amount">
             <i class="bx bx-bug"></i>
-            <h2>150.00</h2>
+            <h2>{{ user.balance }}</h2>
         </div>
         <div class="balance__actions">
             <a href="#/send" class="btn btn--primary-outline">
@@ -16,7 +42,7 @@
                 Send
             </a>
             <a href="#/transfers" class="btn btn--primary-outline">
-                <i class="bx bx-arrow-to-bottom"></i>
+                <i class="bx bx-transfer-alt"></i>
                 All transfers
                 </a>
         </div>
@@ -27,7 +53,7 @@
         <ul class="assets__list">
             <li>
                 <i class="bx bx-bug"></i>
-                <span>150</span>
+                <span>{{user.balance}}</span>
                 <p><strong>BUG</strong></p>
             </li>
             <li>

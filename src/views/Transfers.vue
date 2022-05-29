@@ -4,7 +4,11 @@ import config from "./../../config/config";
 let transfers = ref([1, 2]);
 
 onMounted( () => {
-    fetch(config.url + "transfers")
+    fetch(config.url + "transfers", {
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    })
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -22,14 +26,22 @@ onMounted( () => {
     <div class="transfers">
         <ul>
             <li v-for="(transfer, index) in transfers" :key="index">
-                <i class="bx bx-arrow-to-bottom" style="font-size: 1.2em;"></i>
-                {{ transfer.sender }}
-                transfered
-                {{ transfer.amount }} {{ transfer.coin }}
-                to
-                {{ transfer.receiver }}
+                <i class="bx bx-arrow-to-bottom icon" style="font-size: 1.2em;"></i>
+                <p class="sender">{{ transfer.sender }}</p>
+                <p>transfered</p>
+                <p class="amount">{{ transfer.amount }}</p>
+                <p class="coin">{{ transfer.coin }}</p>
+                <p>to</p>
+                <p class="receiver">{{ transfer.receiver }}</p>
             </li>
         </ul>
+    </div>
+
+    <div class="send">
+        <a href="#/send" class="btn btn--primary" style="width: 90vw; font-size: 1.1em;">
+            <i class="bx bx-arrow-to-top"></i>
+            Send
+        </a>
     </div>
 </template>
 
@@ -46,9 +58,12 @@ ul {
     list-style: none;
     padding: 0;
     text-align: left;
+    width: 90vw;
 }
 
 li {
+    display: flex;
+    gap: 6px;
     margin: 1em 0;
     background-color: $color-secondary-orange;
     padding: 1em 2em;

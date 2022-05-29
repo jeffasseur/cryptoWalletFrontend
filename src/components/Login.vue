@@ -24,16 +24,18 @@ function Login(e) {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.status === "success") {
+                if (data.status == "success") {
+                    let token = data.data.token;
+                    localStorage.setItem('token', token);
                     // redirect to homepage
-                    window.location.href = '/#/'
-                    console.log("Success");
+                    window.location.href = '/#/';
+                    return console.log("Success");
                 } else {
                     // show error
-                    console.log("Error");
+                     return console.log("data status is not success");
                 }
             })
-            .catch(err => console.log("error"));
+            .catch(err => console.log("catch error"));
     } else {
         // show error
          return res.json({
@@ -51,7 +53,7 @@ function Login(e) {
     <h1>Log in</h1>
     <div class="login">
         <div class="loginForm">
-            <form action="" method="POST" name="form-login">
+            <form name="form-login" @submit.prevent="submit">
 
                 <div class="loginForm__img">
                     <img src="../../public/logo-dark.png" alt="Logo Bugfix">
@@ -65,7 +67,7 @@ function Login(e) {
                 <div>
                     <label for="inputPassword">Password:</label>
                     <input type="password" name="inputPassword" id="inputPassword" placeholder="Enter password">
-                    <small><a href="#">Forgot password?</a></small>
+                    <small>Forgot password?</small>
                 </div>
 
                 <div class="loginForm__submit">
