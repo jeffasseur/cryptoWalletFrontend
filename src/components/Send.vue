@@ -49,6 +49,7 @@
 
 <script>
 import {reactive} from 'vue';
+import config from "./../../config/config";
 
 export default {
     name: "Send",
