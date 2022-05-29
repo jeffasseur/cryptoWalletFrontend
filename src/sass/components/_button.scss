@@ -38,3 +38,8 @@
 .btn--white-bg:hover {
     text-decoration: underline;
 }
+
+.btn--danger {
+    background-color: $color-secondary-pinkdark;
+    color: $color-text;
+}

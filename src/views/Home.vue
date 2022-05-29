@@ -113,6 +113,8 @@ onMounted( () => {
     background: $color-gray-light;
     margin: 0 1em;
     border-radius: 15px;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 .assets__list>li {

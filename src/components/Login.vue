@@ -1,6 +1,10 @@
 <script setup>
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import config from '../../config/config';
+let error = ref({
+    status: '',
+    message: ''
+});
 
 function Login(e) {
     console.log("clicked");
@@ -32,16 +36,19 @@ function Login(e) {
                     return console.log("Success");
                 } else {
                     // show error
-                     return console.log("data status is not success");
+                     error.value = data;
+                     console.log(error);
+                     return error;
                 }
             })
-            .catch(err => console.log("catch error"));
+            .catch(err => console.log(err));    
     } else {
         // show error
-         return res.json({
+         let error = res.json({
             status: "failed",
             message: "Fill in your email and password"
         });
+        return error;
     }
 
     e.preventDefault();
@@ -57,6 +64,10 @@ function Login(e) {
 
                 <div class="loginForm__img">
                     <img src="../../public/logo-dark.png" alt="Logo Bugfix">
+                </div>
+
+                <div v-show="error" class="loginForm__error">
+                    <p v-show="error">{{ error.message }}</p>
                 </div>
 
                 <div>
